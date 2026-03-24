@@ -118,166 +118,259 @@
 
 ## 🚀 FEATURES MỞ RỘNG LỚN
 
-### 1. 📱 DANH MỤC SẢN PHẨM CHI TIẾT (Như CellphoneS, Tiki, Shopee)
+### 1. 📱 HỆ THỐNG DANH MỤC ĐA CẤP ✅ (ĐÃ IMPLEMENT)
 
-#### **Điện thoại**
-
-```
-- iPhone (iPhone 15, 14, 13 series)
-- Samsung Galaxy (S, A, Z series)
-- Xiaomi (Mi, Redmi, POCO)
-- OPPO (Find, Reno, A series)
-- Vivo (V, Y, X series)
-- Realme (GT, Number, C series)
-- OnePlus (Flagship, Nord)
-- Nokia (Smartphone, Feature phone)
-- Asus ROG Phone (Gaming)
-- Black Shark (Gaming)
-```
-
-#### **Máy tính bảng**
+#### **Cấu trúc phân cấp:**
 
 ```
-- iPad (Pro, Air, Mini, Standard)
-- Samsung Galaxy Tab
-- Xiaomi Pad
-- Huawei MatePad
-- Lenovo Tab
-- Microsoft Surface
+📦 Danh mục chính (Level 1)
+├── 📱 Điện thoại
+│   ├── iPhone (15, 14, 13 series)
+│   ├── Samsung Galaxy (S, A, Z series)
+│   ├── Xiaomi (Mi, Redmi, POCO)
+│   ├── OPPO (Find, Reno, A series)
+│   └── Vivo, Realme, OnePlus...
+├── 💻 Laptop
+│   ├── MacBook (Pro, Air)
+│   ├── Dell (XPS, Inspiron, Latitude)
+│   ├── HP (Spectre, Envy, Pavilion)
+│   ├── Lenovo (ThinkPad, IdeaPad, Legion)
+│   └── Asus, Acer, MSI...
+├── 🎧 Âm thanh
+│   ├── AirPods (Pro, Max, Standard)
+│   ├── Samsung Galaxy Buds
+│   ├── Sony (WH, WF series)
+│   ├── JBL, Marshall, Bose...
+│   └── Loa Bluetooth, Loa Karaoke
+├── ⌚ Đồng hồ thông minh
+│   ├── Apple Watch (Ultra, SE, Standard)
+│   ├── Samsung Galaxy Watch
+│   ├── Xiaomi Watch, Huawei Watch
+│   └── Amazfit, Garmin, Fitbit
+├── 🎮 Gaming
+│   ├── PlayStation (PS5, PS4)
+│   ├── Xbox (Series X|S, One)
+│   ├── Nintendo Switch
+│   └── Gaming PC, Chair, Desk, VR
+├── 📷 Camera & Flycam
+│   ├── Camera DSLR/Mirrorless
+│   ├── Action Camera (GoPro, DJI)
+│   ├── Drone (DJI, Fimi)
+│   └── Webcam, Ring Light, Gimbal
+├── 🔌 Phụ kiện
+│   ├── Sạc, cáp (Anker, Belkin, Apple)
+│   ├── Ốp lưng, bao da, Kính cường lực
+│   ├── Pin dự phòng, Hub, Adapter
+│   └── Bàn phím, chuột, Micro
+├── 🏠 Thiết bị thông minh
+│   ├── Smart TV (Samsung, LG, Sony, Xiaomi)
+│   ├── Robot hút bụi (Xiaomi, Ecovacs, Dreame)
+│   ├── Camera an ninh, Khóa thông minh
+│   └── Đèn thông minh, Loa thông minh
+├── 🖥️ Máy tính để bàn
+│   ├── iMac, Mac Mini, Mac Studio
+│   ├── PC All-in-One, Mini PC
+│   └── Workstation
+├── 🖥️ Màn hình
+│   ├── Gaming Monitor (ASUS, Acer, LG)
+│   ├── Màn hình văn phòng, đồ họa
+│   ├── Ultra-wide, 4K Monitor
+│   └── Portable Monitor
+├── 💿 Phần mềm & Dịch vụ
+│   ├── Microsoft 365, Adobe Creative Cloud
+│   ├── Apple One, iCloud, Google One
+│   └── Game Keys, Netflix, Spotify
+└── 🏠 Gia dụng thông minh
+    ├── Máy giặt thông minh
+    ├── Tủ lạnh thông minh
+    ├── Điều hòa thông minh
+    └── Robot lau nhà, Máy lọc không khí
 ```
 
-#### **Laptop**
+#### **Đặc điểm hệ thống:**
+
+- ✅ **13 danh mục chính** đã implement trong database
+- ✅ **Hierarchical structure** với parent-child relationships
+- ✅ **Vietnamese naming** cho tất cả categories
+- ✅ **Image support** cho mỗi category
+- ✅ **Product count** tracking
+- ✅ **SEO-friendly slugs** cho URLs
+
+#### **API Endpoints:**
 
 ```
-- MacBook (Pro, Air)
-- Dell (XPS, Inspiron, Latitude)
-- HP (Spectre, Envy, Pavilion)
-- Lenovo (ThinkPad, IdeaPad, Legion)
-- Asus (ROG, ZenBook, VivoBook)
-- Acer (Predator, Swift, Aspire)
-- MSI (Gaming, Creator)
-- Surface (Pro, Laptop, Studio)
+GET /api/v1/categories - Lấy tất cả categories
+GET /api/v1/categories/:slug - Lấy category theo slug
+GET /api/v1/categories/:slug/products - Lấy products trong category
 ```
 
-#### **Âm thanh**
+### 2. 🛒 TÍNH NĂNG GIỎ HÀNG NÂNG CAO
+
+#### **Cart Features:**
 
 ```
-- AirPods (Pro, Max, Standard)
-- Samsung Galaxy Buds
-- Sony (WH, WF series)
-- JBL (Headphones, Speakers)
-- Marshall (Headphones, Speakers)
-- Bose (QuietComfort, Sport)
-- Sennheiser
-- Beats
-- Loa Bluetooth
-- Loa Karaoke
+✅ Giỏ hàng real-time (Zustand store)
+✅ Thêm/xóa/sửa sản phẩm
+✅ Tính tổng tiền tự động
+✅ Lưu giỏ hàng vào localStorage
+✅ Badge hiển thị số lượng
+✅ Animation khi thêm sản phẩm
 ```
 
-#### **Đồng hồ thông minh**
+#### **Planned Enhancements:**
 
 ```
-- Apple Watch (Ultra, SE, Standard)
-- Samsung Galaxy Watch
-- Xiaomi Watch
-- Huawei Watch
-- Amazfit
-- Garmin
-- Fitbit
+🔄 Cart drawer (slide-in panel)
+🔄 Coupon/voucher system
+🔄 Save for later
+🔄 Price alerts
+🔄 Bulk actions
+🔄 Share cart
 ```
 
-#### **Thiết bị Gaming**
+### 3. 💳 HỆ THỐNG THANH TOÁN ĐA PHƯƠNG THỨC
+
+#### **Đã implement:**
 
 ```
-- PlayStation (PS5, PS4)
-- Xbox (Series X|S, One)
-- Nintendo Switch
-- Gaming PC
-- Gaming Chair
-- Gaming Desk
-- Controller, Joystick
-- VR Headset (Meta Quest, PSVR)
+✅ Stripe integration (test mode)
+✅ Payment intent creation
+✅ Webhook handling
+✅ Order status tracking
 ```
 
-#### **Camera & Flycam**
+#### **Planned Vietnamese Payment:**
 
 ```
-- Camera DSLR/Mirrorless (Canon, Sony, Nikon)
-- Action Camera (GoPro, DJI)
-- Drone (DJI, Fimi)
-- Webcam
-- Ring Light
-- Gimbal
+🔄 MoMo integration
+🔄 ZaloPay integration
+🔄 VNPay integration
+🔄 COD (Cash on Delivery)
+🔄 Installment payments (Trả góp)
+🔄 E-wallet system
 ```
 
-#### **Phụ kiện**
+### 4. 🚚 TÍCH HỢP VẬN CHUYỂN VIỆT NAM
+
+#### **Planned Features:**
 
 ```
-- Sạc, cáp (Anker, Belkin, Apple)
-- Ốp lưng, bao da
-- Kính cường lực
-- Giá đỡ, kệ
-- Pin dự phòng
-- Hub, Adapter
-- Bàn phím, chuột
-- Webcam
-- Micro
+🔄 GHN (Giao hàng nhanh) API
+🔄 GHTK (Giao hàng tiết kiệm) API
+🔄 Viettel Post integration
+🔄 Real-time tracking
+🔄 Delivery cost calculator
+🔄 Estimated delivery time
+🔄 Address autocomplete (GPS)
 ```
 
-#### **Thiết bị thông minh**
+### 5. 📱 TÍNH NĂNG MOBILE-FIRST
+
+#### **Đã implement:**
 
 ```
-- Smart TV (Samsung, LG, Sony, Xiaomi)
-- Robot hút bụi (Xiaomi, Ecovacs, Dreame)
-- Camera an ninh
-- Khóa thông minh
-- Đèn thông minh
-- Loa thông minh (Google, Alexa)
+✅ Responsive design (mobile-first)
+✅ Touch-friendly UI
+✅ Swipe gestures
+✅ Mobile navigation
+✅ PWA-ready structure
 ```
 
-#### **Máy tính để bàn**
+#### **Planned Mobile Features:**
 
 ```
-- iMac
-- Mac Mini
-- Mac Studio
-- PC All-in-One
-- Mini PC
-- Workstation
+🔄 Push notifications
+🔄 Biometric login
+🔄 Offline mode
+🔄 Camera integration
+🔄 Barcode scanner
+🔄 AR product preview
 ```
 
-#### **Màn hình**
+### 6. 🎮 GAMIFICATION & ENGAGEMENT
+
+#### **Planned Features:**
 
 ```
-- Gaming Monitor (ASUS, Acer, LG)
-- Màn hình văn phòng
-- Màn hình đồ họa
-- Ultra-wide
-- 4K Monitor
-- Portable Monitor
+🔄 Loyalty points system
+🔄 Daily check-in rewards
+🔄 Referral program
+🔄 Achievement badges
+🔄 Leaderboards
+🔄 Spin the wheel discounts
+🔄 Flash sale countdown
+🔄 Lucky draw system
 ```
 
-#### **Phần mềm & Dịch vụ**
+### 7. 📊 ANALYTICS & INSIGHTS
+
+#### **Planned Dashboard:**
 
 ```
-- Microsoft 365
-- Adobe Creative Cloud
-- Apple One
-- iCloud
-- Google One
-- Game Keys
-- Netflix, Spotify
+🔄 Sales analytics
+🔄 Customer insights
+🔄 Product performance
+🔄 Revenue reports
+🔄 Conversion tracking
+🔄 User behavior analysis
+🔄 Inventory management
+🔄 Profit margins
 ```
 
-#### **Gia dụng thông minh**
+### 8. 🤖 AI & MACHINE LEARNING
+
+#### **Planned AI Features:**
 
 ```
-- Máy giặt thông minh
-- Tủ lạnh thông minh
-- Điều hòa thông minh
-- Máy lọc không khí
-- Nồi chiên không dầu
-- Robot lau nhà
+🔄 Product recommendations
+🔄 Smart search suggestions
+🔄 Chatbot support
+🔄 Personalized homepage
+🔄 Price optimization
+🔄 Demand forecasting
+🔄 Fraud detection
+🔄 Image recognition
+```
+
+### 9. 🌐 SOCIAL COMMERCE
+
+#### **Planned Social Features:**
+
+```
+🔄 User profiles & shops
+🔄 Follow system
+🔄 Product reviews with photos/videos
+🔄 Q&A section
+🔄 Social sharing
+🔄 Influencer integration
+🔄 Live streaming
+🔄 Community forums
+```
+
+### 10. 🔒 SECURITY & COMPLIANCE
+
+#### **Đã implement:**
+
+```
+✅ JWT authentication
+✅ Password hashing (bcrypt)
+✅ Input validation (Zod)
+✅ CORS configuration
+✅ Rate limiting ready
+✅ SQL injection prevention (Prisma)
+```
+
+#### **Planned Security:**
+
+```
+🔄 Two-factor authentication (2FA)
+🔄 Biometric login
+🔄 PCI DSS compliance
+🔄 GDPR compliance
+🔄 Data encryption
+🔄 Audit logging
+🔄 Fraud detection
+🔄 IP blocking
 ```
 
 ### 2. Multi-vendor Marketplace
